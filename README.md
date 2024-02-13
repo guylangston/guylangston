@@ -25,3 +25,7 @@
 - [Tower of Babel](https://www.guylangston.net/Blog/Article/TowerOfBabel)
 - [.NET Process Maximum Memory](https://www.guylangston.net/Blog/Article/MaxMemoryDotNetProcess)
 
+<!--
+curl -s https://www.guylangston.net/Blog/SiteMap  | `
+  foreach { $url=$_;  curl -s $_ | sls -Pattern '<title>([^<]*)</title>' | foreach { "[$($_.Matches[0].Groups[1].Value)]($url)"}  } > blogs.txt
+-->
